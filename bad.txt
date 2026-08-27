@@ -1,0 +1,11 @@
+# bad.txt
+# One blocked word/phrase per line. Lines starting with # are ignored.
+# Matching is case-insensitive and matches whole words by default
+# (see cogs/word_filter.py). Edit this file (or use /badword add | remove)
+# to customize the list for your server.
+#
+# This is only a starter/example list -- replace with whatever your
+# community needs filtered.
+badword1
+badword2
+examplecurseword
