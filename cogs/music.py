@@ -309,7 +309,7 @@ class Music(commands.Cog):
                     ),
                     self.bot.loop,
                 )
-           except Exception as e:
+        except Exception as e:
             
             import traceback
             traceback.print_exc()
