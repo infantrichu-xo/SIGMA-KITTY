@@ -309,14 +309,21 @@ class Music(commands.Cog):
                     ),
                     self.bot.loop,
                 )
-        except Exception as e:
+           except Exception as e:
+            
+            import traceback
+            traceback.print_exc()
+
             if state.text_channel:
                 asyncio.run_coroutine_threadsafe(
-                    state.text_channel.send(f"⚠️ Couldn't play `{track['search']}`: {e}"),
+                    state.text_channel.send(
+                        f"⚠️ Couldn't play `{track['search']}`:\n"
+                        f"`{type(e).__name__}: {e}`"
+                    ),
                     self.bot.loop,
                 )
-            self._play_next(guild)
 
+            self._play_next(guild)
     # -------------------------------------------------------------- commands
     @app_commands.command(name="join", description="Join your voice channel and stay 24/7")
     async def join(self, interaction: discord.Interaction, stay_247: bool = True):
